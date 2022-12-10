@@ -19,7 +19,7 @@ def signup(request):
     if request.method == 'POST':
         form = usercreateprofile(request.POST)
         if form.is_valid():
-            user = User.objects.create(request.POST['email_professional'],request.POST['password'])
+            user = User.objects.create(username = request.POST['email_professional'],password = request.POST['password'])
             Profile.objects.create(user=user,nom = 'fsd',prenom='fre',numero_du_telephone='rew')
     return render(request, 'screen/signup.html',{'form':usercreateprofile})
 
