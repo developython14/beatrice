@@ -13,7 +13,7 @@ class Profile(AbstractUser):
     numero_du_telephone = models.CharField(max_length=100,unique=True )
     institue = models.CharField(max_length=100 )
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['password']
 
     def __str__(self):
         return self.nom
